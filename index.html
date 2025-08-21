@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div id="viz-container">
+      <div id="labels"></div>
+      <canvas id="viz"></canvas>
+      <div id="controls">
+        <div id="formula">
+          <div>
+            <span class="lab ylab">y</span>
+            <span class="yval value"></span>
+            &nbsp;=
+          </div>
+          <div id="b0" class="control">0</div>
+          <div id="b1" class="control">+ 0</div>
+          <div>
+            &times;
+            <span class="lab">x<sub>1</sub></span>
+            <span class="x1val value"></span>
+          </div>
+          <div id="b2" class="control">+ 0</div>
+          <div>
+            &times;
+            <span class="lab">x<sub>2</sub></span>
+            <span class="x2val value"></span>
+          </div>
+          <div id="b3" class="control">+ 0</div>
+          <div>
+            &times;
+            <span class="lab">x<sub>1</sub></span>
+            <span class="x1val value"></span>
+            &times;
+            <span class="lab">x<sub>2</sub></span>
+            <span class="x2val value"></span>
+          </div>
+        </div>
+        <div id="toggle-container">
+          <label class="switch autorotate" title="Toggle autorotate">
+            <input
+              type="checkbox"
+              name="autorotate-toggle"
+              id="autorotate-toggle"
+              checked
+            />
+
+            <span class="slider round"></span>
+          </label>
+          <label class="switch projection" title="Toggle perspective">
+            <input
+              type="checkbox"
+              name="projection-toggle"
+              id="projection-toggle"
+              checked
+            />
+            <span class="slider round"> </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="src/main.js"></script>
+</html>
