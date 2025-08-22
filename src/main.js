@@ -109,6 +109,16 @@ function main() {
   // labelRenderer.setSize(canvas.clientWidth, canvas.clientWidth);
   labelRenderer.setSize(canvas.clientWidth, window.innerHeight);
 
+  canvas.addEventListener("pointerdown", (e) => {
+    if (
+      e.pointerType === "touch" &&
+      raycaster.intersectObject(regPlane.plane, false).length
+    )
+      controls.enabled = false;
+  });
+  canvas.addEventListener("pointerup", (e) => {
+    if (e.pointerType === "touch") controls.enabled = true;
+  });
   canvas.addEventListener("pointermove", getPointerCoords);
   canvas.addEventListener("click", (e) => {
     isClick = true;
@@ -169,7 +179,6 @@ function main() {
   function getPointerCoords(event) {
     // calculate pointer position in normalized device coordinates
     // (-1 to +1) for both components
-
     pointer.x =
       ((event.clientX - canvasBoundingRect.left) / canvas.clientWidth) * 2 - 1;
     pointer.y =
